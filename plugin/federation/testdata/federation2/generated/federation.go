@@ -88,11 +88,9 @@ func (ec *executionContext) __resolve_entities(ctx context.Context, representati
 			switch resolverName {
 
 			case "findExternalExtensionByUpc":
-				if rep["[upc]"] != nil {
-					id0, err := ec.unmarshalNString2string(ctx, rep["upc"])
-					if err != nil {
-						return fmt.Errorf(`unmarshalling param 0 for findExternalExtensionByUpc(): %w`, err)
-					}
+				id0, err := ec.unmarshalNString2string(ctx, rep["upc"])
+				if err != nil {
+					return fmt.Errorf(`unmarshalling param 0 for findExternalExtensionByUpc(): %w`, err)
 				}
 				entity, err := ec.resolvers.Entity().FindExternalExtensionByUpc(ctx, id0)
 				if err != nil {

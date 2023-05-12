@@ -112,6 +112,14 @@ func (f Field) Join(str string) string {
 	return strings.Join(f, str)
 }
 
+// Get first in first
+func (f Field) First() string {
+	if len(f) > 0 {
+		return f[0]
+	}
+	return ""
+}
+
 // JoinGo concatenates the Go name of field parts with a string separator between. Useful in templates.
 func (f Field) JoinGo(str string) string {
 	strs := []string{}

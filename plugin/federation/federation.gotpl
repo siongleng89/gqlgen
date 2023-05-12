@@ -94,11 +94,9 @@ func (ec *executionContext) __resolve_entities(ctx context.Context, representati
 					{{ range $i, $resolver := .Resolvers }}
 					case "{{.ResolverName}}":
 						{{- range $j, $keyField := .KeyFields }}
-							if rep["{{$keyField.Field}}"] != nil {
-								id{{$j}}, err := ec.{{.Type.UnmarshalFunc}}(ctx, rep["{{.Field.Join `"].(map[string]interface{})["`}}"])
-								if err != nil {
-									return fmt.Errorf(`unmarshalling param {{$j}} for {{$resolver.ResolverName}}(): %w`, err)
-								}
+							id{{$j}}, err := ec.{{.Type.UnmarshalFunc}}(ctx, rep["{{.Field.Join `"].(map[string]interface{})["`}}"])
+							if err != nil {
+								return fmt.Errorf(`unmarshalling param {{$j}} for {{$resolver.ResolverName}}(): %w`, err)
 							}
 						{{- end}}
 						entity, err := ec.resolvers.Entity().{{.ResolverName | go}}(ctx, {{- range $j, $_ := .KeyFields -}} id{{$j}}, {{end}})
@@ -106,10 +104,19 @@ func (ec *executionContext) __resolve_entities(ctx context.Context, representati
 							return fmt.Errorf(`resolving Entity "{{$entity.Def.Name}}": %w`, err)
 						}
 						{{ range $entity.Requires }}
-							entity.{{.Field.JoinGo `.`}}, err = ec.{{.Type.UnmarshalFunc}}(ctx, rep["{{.Field.Join `"].(map[string]interface{})["`}}"])
-							if err != nil {
-								return err
-							}
+							{{- if (ne 0 .Field.LastIndex ) }}
+								if rep["{{.Field.First}}"] != nil {
+									entity.{{.Field.JoinGo `.`}}, err = ec.{{.Type.UnmarshalFunc}}(ctx, rep["{{.Field.Join `"].(map[string]interface{})["`}}"])
+									if err != nil {
+										return err
+									}
+								}
+							{{- else }}
+								entity.{{.Field.JoinGo `.`}}, err = ec.{{.Type.UnmarshalFunc}}(ctx, rep["{{.Field.Join `"].(map[string]interface{})["`}}"])
+								if err != nil {
+									return err
+								}
+							{{- end }}
 						{{- end }}
 						list[idx[i]] = entity
 						return nil
