@@ -94,7 +94,7 @@ func (ec *executionContext) __resolve_entities(ctx context.Context, representati
 					{{ range $i, $resolver := .Resolvers }}
 					case "{{.ResolverName}}":
 						{{- range $j, $keyField := .KeyFields }}
-							if rep["{{.Field.Join `"] != nil {
+							if rep["{{$keyField.Field}}"] != nil {
 								id{{$j}}, err := ec.{{.Type.UnmarshalFunc}}(ctx, rep["{{.Field.Join `"].(map[string]interface{})["`}}"])
 								if err != nil {
 									return fmt.Errorf(`unmarshalling param {{$j}} for {{$resolver.ResolverName}}(): %w`, err)

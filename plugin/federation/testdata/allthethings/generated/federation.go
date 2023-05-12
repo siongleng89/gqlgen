@@ -9,7 +9,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/siongleng89/gqlgen/plugin/federation/fedruntime"
+	"github.com/99designs/gqlgen/plugin/federation/fedruntime"
 )
 
 var (
@@ -88,9 +88,11 @@ func (ec *executionContext) __resolve_entities(ctx context.Context, representati
 			switch resolverName {
 
 			case "findExternalExtensionByUpc":
-				id0, err := ec.unmarshalNString2string(ctx, rep["upc"])
-				if err != nil {
-					return fmt.Errorf(`unmarshalling param 0 for findExternalExtensionByUpc(): %w`, err)
+				if rep["[upc]"] != nil {
+					id0, err := ec.unmarshalNString2string(ctx, rep["upc"])
+					if err != nil {
+						return fmt.Errorf(`unmarshalling param 0 for findExternalExtensionByUpc(): %w`, err)
+					}
 				}
 				entity, err := ec.resolvers.Entity().FindExternalExtensionByUpc(ctx, id0)
 				if err != nil {
@@ -108,9 +110,11 @@ func (ec *executionContext) __resolve_entities(ctx context.Context, representati
 			switch resolverName {
 
 			case "findHelloByName":
-				id0, err := ec.unmarshalNString2string(ctx, rep["name"])
-				if err != nil {
-					return fmt.Errorf(`unmarshalling param 0 for findHelloByName(): %w`, err)
+				if rep["[name]"] != nil {
+					id0, err := ec.unmarshalNString2string(ctx, rep["name"])
+					if err != nil {
+						return fmt.Errorf(`unmarshalling param 0 for findHelloByName(): %w`, err)
+					}
 				}
 				entity, err := ec.resolvers.Entity().FindHelloByName(ctx, id0)
 				if err != nil {
@@ -128,13 +132,17 @@ func (ec *executionContext) __resolve_entities(ctx context.Context, representati
 			switch resolverName {
 
 			case "findNestedKeyByIDAndHelloName":
-				id0, err := ec.unmarshalNString2string(ctx, rep["id"])
-				if err != nil {
-					return fmt.Errorf(`unmarshalling param 0 for findNestedKeyByIDAndHelloName(): %w`, err)
+				if rep["[id]"] != nil {
+					id0, err := ec.unmarshalNString2string(ctx, rep["id"])
+					if err != nil {
+						return fmt.Errorf(`unmarshalling param 0 for findNestedKeyByIDAndHelloName(): %w`, err)
+					}
 				}
-				id1, err := ec.unmarshalNString2string(ctx, rep["hello"].(map[string]interface{})["name"])
-				if err != nil {
-					return fmt.Errorf(`unmarshalling param 1 for findNestedKeyByIDAndHelloName(): %w`, err)
+				if rep["[hello name]"] != nil {
+					id1, err := ec.unmarshalNString2string(ctx, rep["hello"].(map[string]interface{})["name"])
+					if err != nil {
+						return fmt.Errorf(`unmarshalling param 1 for findNestedKeyByIDAndHelloName(): %w`, err)
+					}
 				}
 				entity, err := ec.resolvers.Entity().FindNestedKeyByIDAndHelloName(ctx, id0, id1)
 				if err != nil {
@@ -152,25 +160,35 @@ func (ec *executionContext) __resolve_entities(ctx context.Context, representati
 			switch resolverName {
 
 			case "findVeryNestedKeyByIDAndHelloNameAndWorldFooAndWorldBarAndMoreWorldFoo":
-				id0, err := ec.unmarshalNString2string(ctx, rep["id"])
-				if err != nil {
-					return fmt.Errorf(`unmarshalling param 0 for findVeryNestedKeyByIDAndHelloNameAndWorldFooAndWorldBarAndMoreWorldFoo(): %w`, err)
+				if rep["[id]"] != nil {
+					id0, err := ec.unmarshalNString2string(ctx, rep["id"])
+					if err != nil {
+						return fmt.Errorf(`unmarshalling param 0 for findVeryNestedKeyByIDAndHelloNameAndWorldFooAndWorldBarAndMoreWorldFoo(): %w`, err)
+					}
 				}
-				id1, err := ec.unmarshalNString2string(ctx, rep["hello"].(map[string]interface{})["name"])
-				if err != nil {
-					return fmt.Errorf(`unmarshalling param 1 for findVeryNestedKeyByIDAndHelloNameAndWorldFooAndWorldBarAndMoreWorldFoo(): %w`, err)
+				if rep["[hello name]"] != nil {
+					id1, err := ec.unmarshalNString2string(ctx, rep["hello"].(map[string]interface{})["name"])
+					if err != nil {
+						return fmt.Errorf(`unmarshalling param 1 for findVeryNestedKeyByIDAndHelloNameAndWorldFooAndWorldBarAndMoreWorldFoo(): %w`, err)
+					}
 				}
-				id2, err := ec.unmarshalNString2string(ctx, rep["world"].(map[string]interface{})["foo"])
-				if err != nil {
-					return fmt.Errorf(`unmarshalling param 2 for findVeryNestedKeyByIDAndHelloNameAndWorldFooAndWorldBarAndMoreWorldFoo(): %w`, err)
+				if rep["[world foo]"] != nil {
+					id2, err := ec.unmarshalNString2string(ctx, rep["world"].(map[string]interface{})["foo"])
+					if err != nil {
+						return fmt.Errorf(`unmarshalling param 2 for findVeryNestedKeyByIDAndHelloNameAndWorldFooAndWorldBarAndMoreWorldFoo(): %w`, err)
+					}
 				}
-				id3, err := ec.unmarshalNInt2int(ctx, rep["world"].(map[string]interface{})["bar"])
-				if err != nil {
-					return fmt.Errorf(`unmarshalling param 3 for findVeryNestedKeyByIDAndHelloNameAndWorldFooAndWorldBarAndMoreWorldFoo(): %w`, err)
+				if rep["[world bar]"] != nil {
+					id3, err := ec.unmarshalNInt2int(ctx, rep["world"].(map[string]interface{})["bar"])
+					if err != nil {
+						return fmt.Errorf(`unmarshalling param 3 for findVeryNestedKeyByIDAndHelloNameAndWorldFooAndWorldBarAndMoreWorldFoo(): %w`, err)
+					}
 				}
-				id4, err := ec.unmarshalNString2string(ctx, rep["more"].(map[string]interface{})["world"].(map[string]interface{})["foo"])
-				if err != nil {
-					return fmt.Errorf(`unmarshalling param 4 for findVeryNestedKeyByIDAndHelloNameAndWorldFooAndWorldBarAndMoreWorldFoo(): %w`, err)
+				if rep["[more world foo]"] != nil {
+					id4, err := ec.unmarshalNString2string(ctx, rep["more"].(map[string]interface{})["world"].(map[string]interface{})["foo"])
+					if err != nil {
+						return fmt.Errorf(`unmarshalling param 4 for findVeryNestedKeyByIDAndHelloNameAndWorldFooAndWorldBarAndMoreWorldFoo(): %w`, err)
+					}
 				}
 				entity, err := ec.resolvers.Entity().FindVeryNestedKeyByIDAndHelloNameAndWorldFooAndWorldBarAndMoreWorldFoo(ctx, id0, id1, id2, id3, id4)
 				if err != nil {
@@ -196,9 +214,11 @@ func (ec *executionContext) __resolve_entities(ctx context.Context, representati
 			switch resolverName {
 
 			case "findWorldByFoo":
-				id0, err := ec.unmarshalNString2string(ctx, rep["foo"])
-				if err != nil {
-					return fmt.Errorf(`unmarshalling param 0 for findWorldByFoo(): %w`, err)
+				if rep["[foo]"] != nil {
+					id0, err := ec.unmarshalNString2string(ctx, rep["foo"])
+					if err != nil {
+						return fmt.Errorf(`unmarshalling param 0 for findWorldByFoo(): %w`, err)
+					}
 				}
 				entity, err := ec.resolvers.Entity().FindWorldByFoo(ctx, id0)
 				if err != nil {
@@ -208,9 +228,11 @@ func (ec *executionContext) __resolve_entities(ctx context.Context, representati
 				list[idx[i]] = entity
 				return nil
 			case "findWorldByBar":
-				id0, err := ec.unmarshalNInt2int(ctx, rep["bar"])
-				if err != nil {
-					return fmt.Errorf(`unmarshalling param 0 for findWorldByBar(): %w`, err)
+				if rep["[bar]"] != nil {
+					id0, err := ec.unmarshalNInt2int(ctx, rep["bar"])
+					if err != nil {
+						return fmt.Errorf(`unmarshalling param 0 for findWorldByBar(): %w`, err)
+					}
 				}
 				entity, err := ec.resolvers.Entity().FindWorldByBar(ctx, id0)
 				if err != nil {

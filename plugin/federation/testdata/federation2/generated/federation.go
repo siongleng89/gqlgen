@@ -9,7 +9,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/siongleng89/gqlgen/plugin/federation/fedruntime"
+	"github.com/99designs/gqlgen/plugin/federation/fedruntime"
 )
 
 var (
@@ -88,9 +88,11 @@ func (ec *executionContext) __resolve_entities(ctx context.Context, representati
 			switch resolverName {
 
 			case "findExternalExtensionByUpc":
-				id0, err := ec.unmarshalNString2string(ctx, rep["upc"])
-				if err != nil {
-					return fmt.Errorf(`unmarshalling param 0 for findExternalExtensionByUpc(): %w`, err)
+				if rep["[upc]"] != nil {
+					id0, err := ec.unmarshalNString2string(ctx, rep["upc"])
+					if err != nil {
+						return fmt.Errorf(`unmarshalling param 0 for findExternalExtensionByUpc(): %w`, err)
+					}
 				}
 				entity, err := ec.resolvers.Entity().FindExternalExtensionByUpc(ctx, id0)
 				if err != nil {
