@@ -9,8 +9,8 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/99designs/gqlgen/codegen/config"
-	"github.com/99designs/gqlgen/codegen/templates"
+	"github.com/siongleng89/gqlgen/codegen/config"
+	"github.com/siongleng89/gqlgen/codegen/templates"
 	"github.com/vektah/gqlparser/v2/ast"
 )
 

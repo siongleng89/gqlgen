@@ -8,8 +8,8 @@ import (
 
 	"golang.org/x/tools/go/packages"
 
-	"github.com/99designs/gqlgen/codegen/templates"
-	"github.com/99designs/gqlgen/internal/code"
+	"github.com/siongleng89/gqlgen/codegen/templates"
+	"github.com/siongleng89/gqlgen/internal/code"
 	"github.com/vektah/gqlparser/v2/ast"
 )
 
@@ -336,7 +336,7 @@ func unwrapOmittable(t types.Type) (types.Type, bool) {
 	if !ok {
 		return t, false
 	}
-	if named.Origin().String() != "github.com/99designs/gqlgen/graphql.Omittable[T any]" {
+	if named.Origin().String() != "github.com/siongleng89/gqlgen/graphql.Omittable[T any]" {
 		return t, false
 	}
 	return named.TypeArgs().At(0), true
@@ -414,7 +414,7 @@ func (b *Binder) TypeReference(schemaType *ast.Type, bindTarget types.Type) (ret
 
 		if fun, isFunc := obj.(*types.Func); isFunc {
 			ref.GO = fun.Type().(*types.Signature).Params().At(0).Type()
-			ref.IsContext = fun.Type().(*types.Signature).Results().At(0).Type().String() == "github.com/99designs/gqlgen/graphql.ContextMarshaler"
+			ref.IsContext = fun.Type().(*types.Signature).Results().At(0).Type().String() == "github.com/siongleng89/gqlgen/graphql.ContextMarshaler"
 			ref.Marshaler = fun
 			ref.Unmarshaler = types.NewFunc(0, fun.Pkg(), "Unmarshal"+typeName, nil)
 		} else if hasMethod(obj.Type(), "MarshalGQLContext") && hasMethod(obj.Type(), "UnmarshalGQLContext") {

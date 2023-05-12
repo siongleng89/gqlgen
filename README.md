@@ -131,8 +131,8 @@ Yes! You can by remapping it in config as seen below:
 models:
   ID: # The GraphQL type ID is backed by
     model:
-      - github.com/99designs/gqlgen/graphql.IntID # a go integer
-      - github.com/99designs/gqlgen/graphql.ID # or a go string
+      - github.com/siongleng89/gqlgen/graphql.IntID # a go integer
+      - github.com/siongleng89/gqlgen/graphql.ID # or a go string
 ```
 
 This means gqlgen will be able to automatically bind to strings or ints for models you have written yourself, but the

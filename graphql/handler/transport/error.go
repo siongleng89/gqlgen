@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/99designs/gqlgen/graphql"
+	"github.com/siongleng89/gqlgen/graphql"
 	"github.com/vektah/gqlparser/v2/gqlerror"
 )
 

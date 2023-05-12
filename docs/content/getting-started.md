@@ -33,7 +33,7 @@ Next, create a `tools.go` file and add gqlgen as a [tool dependency for your mod
 package tools
 
 import (
-	_ "github.com/99designs/gqlgen"
+	_ "github.com/siongleng89/gqlgen"
 )
 ```
 
@@ -44,7 +44,7 @@ go mod tidy
 
 By default you'll be using the latest version of gqlgen, but if you want to specify a particular version you can use `go get` (replacing `VERSION` with the particular version desired)
 ```shell
-go get -d github.com/99designs/gqlgen@VERSION
+go get -d github.com/siongleng89/gqlgen@VERSION
 ```
 
 
@@ -54,7 +54,7 @@ go get -d github.com/99designs/gqlgen@VERSION
 ### Create the project skeleton
 
 ```shell
-go run github.com/99designs/gqlgen init
+go run github.com/siongleng89/gqlgen init
 ```
 
 This will create our suggested package layout. You can modify these paths in gqlgen.yml if you need to.
@@ -213,15 +213,15 @@ And add `Todo` fields resolver config in `gqlgen.yml` to generate resolver for `
 models:
   ID:
     model:
-      - github.com/99designs/gqlgen/graphql.ID
-      - github.com/99designs/gqlgen/graphql.Int
-      - github.com/99designs/gqlgen/graphql.Int64
-      - github.com/99designs/gqlgen/graphql.Int32
+      - github.com/siongleng89/gqlgen/graphql.ID
+      - github.com/siongleng89/gqlgen/graphql.Int
+      - github.com/siongleng89/gqlgen/graphql.Int64
+      - github.com/siongleng89/gqlgen/graphql.Int32
   Int:
     model:
-      - github.com/99designs/gqlgen/graphql.Int
-      - github.com/99designs/gqlgen/graphql.Int64
-      - github.com/99designs/gqlgen/graphql.Int32
+      - github.com/siongleng89/gqlgen/graphql.Int
+      - github.com/siongleng89/gqlgen/graphql.Int64
+      - github.com/siongleng89/gqlgen/graphql.Int32
   Todo:
     fields:
       user:
@@ -270,7 +270,7 @@ func (r *todoResolver) User(ctx context.Context, obj *model.Todo) (*model.User, 
 At the top of our `resolver.go`, between `package` and `import`, add the following line:
 
 ```go
-//go:generate go run github.com/99designs/gqlgen generate
+//go:generate go run github.com/siongleng89/gqlgen generate
 ```
 
 This magic comment tells `go generate` what command to run when we want to regenerate our code. To run go generate recursively over your entire project, use this command:

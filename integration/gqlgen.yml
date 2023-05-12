@@ -14,15 +14,15 @@ resolver:
 struct_tag: json
 
 autobind:
-  - "github.com/99designs/gqlgen/integration/testomitempty"
+  - "github.com/siongleng89/gqlgen/integration/testomitempty"
 
 models:
   Element:
-    model: github.com/99designs/gqlgen/integration/models-go.Element
+    model: github.com/siongleng89/gqlgen/integration/models-go.Element
   Viewer:
-    model: github.com/99designs/gqlgen/integration/models-go.Viewer
+    model: github.com/siongleng89/gqlgen/integration/models-go.Viewer
   User:
-    model: github.com/99designs/gqlgen/integration/remote_api.User
+    model: github.com/siongleng89/gqlgen/integration/remote_api.User
     fields:
       likes:
         resolver: true

@@ -9,7 +9,7 @@ import (
 	"testing"
 
 	"github.com/99designs/gqlgen/_examples/fileupload/model"
-	gqlclient "github.com/99designs/gqlgen/client"
+	gqlclient "github.com/siongleng89/gqlgen/client"
 	"github.com/99designs/gqlgen/graphql"
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/handler/transport"

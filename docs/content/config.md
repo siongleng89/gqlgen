@@ -90,15 +90,15 @@ resolver:
 models:
   ID:
     model:
-      - github.com/99designs/gqlgen/graphql.ID
-      - github.com/99designs/gqlgen/graphql.Int
-      - github.com/99designs/gqlgen/graphql.Int64
-      - github.com/99designs/gqlgen/graphql.Int32
+      - github.com/siongleng89/gqlgen/graphql.ID
+      - github.com/siongleng89/gqlgen/graphql.Int
+      - github.com/siongleng89/gqlgen/graphql.Int64
+      - github.com/siongleng89/gqlgen/graphql.Int32
   Int:
     model:
-      - github.com/99designs/gqlgen/graphql.Int
-      - github.com/99designs/gqlgen/graphql.Int64
-      - github.com/99designs/gqlgen/graphql.Int32
+      - github.com/siongleng89/gqlgen/graphql.Int
+      - github.com/siongleng89/gqlgen/graphql.Int64
+      - github.com/siongleng89/gqlgen/graphql.Int32
 ```
 
 Everything has defaults, so add things as you need.

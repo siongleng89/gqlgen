@@ -35,7 +35,7 @@ federation:
 For each server to be federated we will create a new gqlgen project.
 
 ```bash
-go run github.com/99designs/gqlgen
+go run github.com/siongleng89/gqlgen
 ```
 
 Update the schema to reflect the federated example
@@ -60,7 +60,7 @@ extend type Product @key(fields: "upc") {
 
 and regenerate
 ```bash
-go run github.com/99designs/gqlgen
+go run github.com/siongleng89/gqlgen
 ```
 
 then implement the resolvers

@@ -12,12 +12,12 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/99designs/gqlgen/graphql"
-	"github.com/99designs/gqlgen/plugin/modelgen/out_nullable_input_omittable"
-	"github.com/99designs/gqlgen/plugin/modelgen/out_struct_pointers"
+	"github.com/siongleng89/gqlgen/graphql"
+	"github.com/siongleng89/gqlgen/plugin/modelgen/out_nullable_input_omittable"
+	"github.com/siongleng89/gqlgen/plugin/modelgen/out_struct_pointers"
 
-	"github.com/99designs/gqlgen/codegen/config"
-	"github.com/99designs/gqlgen/plugin/modelgen/out"
+	"github.com/siongleng89/gqlgen/codegen/config"
+	"github.com/siongleng89/gqlgen/plugin/modelgen/out"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
