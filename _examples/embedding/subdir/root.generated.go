@@ -9,9 +9,9 @@ import (
 	"strconv"
 	"sync/atomic"
 
-	"github.com/99designs/gqlgen/graphql"
-	"github.com/99designs/gqlgen/graphql/introspection"
-	"github.com/99designs/gqlgen/plugin/federation/fedruntime"
+	"github.com/siongleng89/gqlgen/graphql"
+	"github.com/siongleng89/gqlgen/graphql/introspection"
+	"github.com/siongleng89/gqlgen/plugin/federation/fedruntime"
 	"github.com/vektah/gqlparser/v2/ast"
 )
 

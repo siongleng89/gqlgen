@@ -1,11 +1,11 @@
 ![gqlgen](https://user-images.githubusercontent.com/980499/133180111-d064b38c-6eb9-444b-a60f-7005a6e68222.png)
 
 
-# gqlgen [![Integration](https://github.com/99designs/gqlgen/actions/workflows/integration.yml/badge.svg)](https://github.com/99designs/gqlgen/actions) [![Coverage Status](https://coveralls.io/repos/github/99designs/gqlgen/badge.svg?branch=master)](https://coveralls.io/github/99designs/gqlgen?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/99designs/gqlgen)](https://goreportcard.com/report/github.com/99designs/gqlgen) [![Go Reference](https://pkg.go.dev/badge/github.com/99designs/gqlgen.svg)](https://pkg.go.dev/github.com/99designs/gqlgen) [![Read the Docs](https://badgen.net/badge/docs/available/green)](http://gqlgen.com/)
+# gqlgen [![Integration](https://github.com/siongleng89/gqlgen/actions/workflows/integration.yml/badge.svg)](https://github.com/siongleng89/gqlgen/actions) [![Coverage Status](https://coveralls.io/repos/github/99designs/gqlgen/badge.svg?branch=master)](https://coveralls.io/github/99designs/gqlgen?branch=master) [![Go Report Card](https://goreportcard.com/badge/github.com/siongleng89/gqlgen)](https://goreportcard.com/report/github.com/siongleng89/gqlgen) [![Go Reference](https://pkg.go.dev/badge/github.com/siongleng89/gqlgen.svg)](https://pkg.go.dev/github.com/siongleng89/gqlgen) [![Read the Docs](https://badgen.net/badge/docs/available/green)](http://gqlgen.com/)
 
 ## What is gqlgen?
 
-[gqlgen](https://github.com/99designs/gqlgen) is a Go library for building GraphQL servers without any fuss.<br/>
+[gqlgen](https://github.com/siongleng89/gqlgen) is a Go library for building GraphQL servers without any fuss.<br/>
 
 - **gqlgen is based on a Schema first approach** — You get to Define your API using the GraphQL [Schema Definition Language](http://graphql.org/learn/schema/).
 - **gqlgen prioritizes Type safety** — You should never see `map[string]interface{}` here.
@@ -20,15 +20,15 @@ Still not convinced enough to use **gqlgen**? Compare **gqlgen** with other Go g
        cd example
        go mod init example
 
-2. Add `github.com/99designs/gqlgen` to your [project's tools.go](https://github.com/golang/go/wiki/Modules#how-can-i-track-tool-dependencies-for-a-module)
+2. Add `github.com/siongleng89/gqlgen` to your [project's tools.go](https://github.com/golang/go/wiki/Modules#how-can-i-track-tool-dependencies-for-a-module)
 
-       printf '// +build tools\npackage tools\nimport (_ "github.com/99designs/gqlgen"\n _ "github.com/99designs/gqlgen/graphql/introspection")' | gofmt > tools.go
+       printf '// +build tools\npackage tools\nimport (_ "github.com/siongleng89/gqlgen"\n _ "github.com/siongleng89/gqlgen/graphql/introspection")' | gofmt > tools.go
 
        go mod tidy
 
 3. Initialise gqlgen config and generate models
 
-       go run github.com/99designs/gqlgen init
+       go run github.com/siongleng89/gqlgen init
 
 4. Start the graphql server
 
@@ -36,16 +36,16 @@ Still not convinced enough to use **gqlgen**? Compare **gqlgen** with other Go g
 
 More help to get started:
  - [Getting started tutorial](https://gqlgen.com/getting-started/) - a comprehensive guide to help you get started
- - [Real-world examples](https://github.com/99designs/gqlgen/tree/master/_examples) show how to create GraphQL applications
- - [Reference docs](https://pkg.go.dev/github.com/99designs/gqlgen) for the APIs
+ - [Real-world examples](https://github.com/siongleng89/gqlgen/tree/master/_examples) show how to create GraphQL applications
+ - [Reference docs](https://pkg.go.dev/github.com/siongleng89/gqlgen) for the APIs
 
 ## Reporting Issues
 
-If you think you've found a bug, or something isn't behaving the way you think it should, please raise an [issue](https://github.com/99designs/gqlgen/issues) on GitHub.
+If you think you've found a bug, or something isn't behaving the way you think it should, please raise an [issue](https://github.com/siongleng89/gqlgen/issues) on GitHub.
 
 ## Contributing
 
-We welcome contributions, Read our [Contribution Guidelines](https://github.com/99designs/gqlgen/blob/master/CONTRIBUTING.md) to learn more about contributing to **gqlgen**
+We welcome contributions, Read our [Contribution Guidelines](https://github.com/siongleng89/gqlgen/blob/master/CONTRIBUTING.md) to learn more about contributing to **gqlgen**
 ## Frequently asked questions
 
 ### How do I prevent fetching child objects that might not be used?

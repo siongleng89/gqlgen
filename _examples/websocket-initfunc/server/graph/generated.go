@@ -12,8 +12,8 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/99designs/gqlgen/graphql"
-	"github.com/99designs/gqlgen/graphql/introspection"
+	"github.com/siongleng89/gqlgen/graphql"
+	"github.com/siongleng89/gqlgen/graphql/introspection"
 	"github.com/gqlgen/_examples/websocket-initfunc/server/graph/model"
 	gqlparser "github.com/vektah/gqlparser/v2"
 	"github.com/vektah/gqlparser/v2/ast"

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/99designs/gqlgen/plugin/federation/fedruntime"
+	"github.com/siongleng89/gqlgen/plugin/federation/fedruntime"
 )
 
 var (

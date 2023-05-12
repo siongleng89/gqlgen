@@ -41,7 +41,7 @@ fileupload/fileupload_test.go:33:23: Error return value of `a1TxtFile.WriteStrin
 fileupload/fileupload_test.go:34:23: Error return value of `b1TxtFile.WriteString` is not checked (errcheck)
 fileupload/fileupload_test.go:230:10: comparing with == will fail on wrapped errors. Use errors.Is to check for a specific error (errorlint)
 fileupload/server/server.go:37:12: G114: Use of net/http serve function that has no support for setting timeouts (gosec)
-go.mod:5:1: local replacement are not allowed: github.com/99designs/gqlgen (gomoddirectives)
+go.mod:5:1: local replacement are not allowed: github.com/siongleng89/gqlgen (gomoddirectives)
 scalars/model/model.go:19:10: Error return value of `w.Write` is not checked (errcheck)
 scalars/model/model.go:21:10: Error return value of `w.Write` is not checked (errcheck)
 scalars/model/model.go:28:8: equalFold: consider replacing with strings.EqualFold(v, "true") (gocritic)

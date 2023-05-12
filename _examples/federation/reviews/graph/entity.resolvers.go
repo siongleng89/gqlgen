@@ -7,7 +7,7 @@ package graph
 import (
 	"context"
 
-	"github.com/99designs/gqlgen/_examples/federation/reviews/graph/model"
+	"github.com/siongleng89/gqlgen/_examples/federation/reviews/graph/model"
 )
 
 // FindProductByManufacturerIDAndID is the resolver for the findProductByManufacturerIDAndID field.

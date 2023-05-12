@@ -5,5 +5,5 @@
 ### Minimal graphql.schema and models to reproduce
 
 ### versions
- - `go run github.com/99designs/gqlgen version`?
+ - `go run github.com/siongleng89/gqlgen version`?
  - `go version`?

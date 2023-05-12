@@ -130,7 +130,7 @@ directive @goTag(
 > Here be dragons
 >
 > gqlgen doesnt currently support user-configurable directives for SCALAR, ENUM, INTERFACE or UNION. This only works
-> for internal directives. You can track the progress [here](https://github.com/99designs/gqlgen/issues/760)
+> for internal directives. You can track the progress [here](https://github.com/siongleng89/gqlgen/issues/760)
 
 Now you can use these directives when defining types in your schema:
 

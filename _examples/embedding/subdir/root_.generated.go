@@ -9,8 +9,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/99designs/gqlgen/graphql"
-	"github.com/99designs/gqlgen/graphql/introspection"
+	"github.com/siongleng89/gqlgen/graphql"
+	"github.com/siongleng89/gqlgen/graphql/introspection"
 	gqlparser "github.com/vektah/gqlparser/v2"
 	"github.com/vektah/gqlparser/v2/ast"
 )

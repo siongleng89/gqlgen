@@ -5,8 +5,8 @@ package fileupload
 import (
 	"context"
 
-	"github.com/99designs/gqlgen/_examples/fileupload/model"
-	"github.com/99designs/gqlgen/graphql"
+	"github.com/siongleng89/gqlgen/_examples/fileupload/model"
+	"github.com/siongleng89/gqlgen/graphql"
 )
 
 type Stub struct {

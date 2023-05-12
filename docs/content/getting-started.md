@@ -242,10 +242,10 @@ type Todo struct {
 }
 ```
 
-And run `go run github.com/99designs/gqlgen generate`.
+And run `go run github.com/siongleng89/gqlgen generate`.
 
 >
-> If you run into this error `package github.com/99designs/gqlgen: no Go files` while executing the `generate` command above, follow the instructions in [this](https://github.com/99designs/gqlgen/issues/800#issuecomment-888908950) comment for a possible solution.
+> If you run into this error `package github.com/siongleng89/gqlgen: no Go files` while executing the `generate` command above, follow the instructions in [this](https://github.com/siongleng89/gqlgen/issues/800#issuecomment-888908950) comment for a possible solution.
 
 Now if we look in `graph/schema.resolvers.go` we can see a new resolver, lets implement it and fix `CreateTodo`.
 ```go

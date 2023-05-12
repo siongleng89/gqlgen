@@ -3,7 +3,7 @@
 package model
 
 import (
-	"github.com/99designs/gqlgen/graphql"
+	"github.com/siongleng89/gqlgen/graphql"
 )
 
 // The `File` type, represents the response of uploading a file.

@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/99designs/gqlgen/_examples/scalars/external"
-	"github.com/99designs/gqlgen/_examples/scalars/model"
+	"github.com/siongleng89/gqlgen/_examples/scalars/external"
+	"github.com/siongleng89/gqlgen/_examples/scalars/model"
 )
 
 type Resolver struct{}
